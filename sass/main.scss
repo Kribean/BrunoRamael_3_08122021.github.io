@@ -22,7 +22,7 @@ $color-dark:#000;
     &:hover {
     background: -moz-linear-gradient(top, lighten($color0,10%), lighten($color1,10%) );
     background: -webkit-linear-gradient(top, lighten($color0,10%), lighten($color1,10%) );
-    background: linear-gradient(to bottom, lighten($color0,10%) , ligthen($color1,10%) );
+    background: linear-gradient(to bottom, lighten($color0,10%) , lighten($color1,10%) );
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
     }
    }
@@ -50,8 +50,8 @@ $color-dark:#000;
             background-clip: text;
             -webkit-text-fill-color: transparent;
     }
-    50% {
-        transform: scale(0);
+    20% {
+        transform: scale(1);
         -webkit-text-stroke: 0px ;
             background: -moz-linear-gradient(to bottom,white 80%, $colour-secondary 10%, $colour-primary 10%);
             background: -webkit-linear-gradient(to bottom,white 80%, $colour-secondary 10%, $colour-primary 10%);
@@ -61,6 +61,20 @@ $color-dark:#000;
             background-clip: text;
             -webkit-text-fill-color: transparent;
     }
+
+
+    50% {
+        transform: scale(1.5);
+        -webkit-text-stroke: 0px ;
+            background: -moz-linear-gradient(to bottom,white 70%, $colour-secondary 20%, $colour-primary 10%);
+            background: -webkit-linear-gradient(to bottom,white 70%, $colour-secondary 20%, $colour-primary 10%);
+            background: linear-gradient(to bottom,white 70%, $colour-secondary 20%, $colour-primary 10%);
+            -webkit-background-clip: text;
+            -moz-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+    }
+
 
 
     100% {
@@ -181,6 +195,7 @@ nav{
         flex-wrap: wrap;
         justify-content: space-between;
         width: 100%;
+        padding-right: 15px;
         
 
         & .fonctionnement-item{
@@ -251,6 +266,7 @@ nav{
     font-family: 'Roboto', sans-serif;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     padding-top: 50px;
     padding-bottom: 50px;
     background-color:lighten($colour-gray, 5%);
@@ -347,36 +363,12 @@ nav{
 
     }
 
-    &-zone-text{
-        display: flex;
-        flex-direction: row;
-        justify-content:space-between ;
-        padding-top: 15px;
-        margin-left: 10px;
-
-        & a{
-            text-decoration: none;
-            color:black;
-        }
-        
-        &-favi{
-            font-size: 24px;
-            padding-right: 20px;
-            
-
-        }
-    }
-
-
-
     &-fas--disabled{
         -webkit-text-stroke: 1px black;
         color: white;
 
 
-        &:hover{
-            cursor: pointer;
-        }
+
         &:active{
 
             animation: progress-heart 1000ms;
@@ -392,7 +384,54 @@ nav{
     
         }
 
+
+
     }
+
+
+
+    &-zone-text{
+        display: flex;
+        flex-direction: row;
+        justify-content:space-between ;
+        padding-top: 15px;
+        margin-left: 10px;
+
+        & a{
+            text-decoration: none;
+            color:black;
+        }
+        
+        &-favi{
+            font-size: 24px;
+            padding-right: 20px;
+            transition: 1s;
+
+            & a:hover{
+                & i{
+                    
+                    animation: progress-heart 1000ms;
+                    -webkit-text-stroke: 0px ;
+                    background: -moz-linear-gradient(top, $colour-secondary 0%, $colour-primary 100%);
+                    background: -webkit-linear-gradient(top, $colour-secondary 0%, $colour-primary 100%);
+                    background: linear-gradient(to bottom, $colour-secondary 0%, $colour-primary 100%);
+                    -webkit-background-clip: text;
+                    -moz-background-clip: text;
+                    background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+
+                
+    
+            }
+            
+
+        }
+    }
+
+
+
+
 
 
 }
@@ -401,6 +440,13 @@ footer{
     font-family: 'Roboto', sans-serif;
     color:white;
     background-color: $color-dark;
+    text-align: center;
+    padding-bottom: 100px;
+    @media screen and (max-width:600px) {
+        text-align: left;
+        padding-left: 15px;
+        padding-bottom: 50px;
+    }
     
     & ul{
         list-style-type: none;
@@ -415,4 +461,44 @@ footer{
             margin-right: 15px;
         }
     }
+}
+
+//page type 2
+
+#titre_section{
+    .card{
+        font-family: 'Roboto', sans-serif;
+        background-color: white;
+        width: 100%;
+        height:500px;
+
+        &-zone-img{
+            height: 100%;
+            overflow:hidden;
+            position:relative;
+    
+            &-textover{
+                position: absolute;
+                top: 400px;
+                left: 0px;
+                width: 100%;
+                background-color: white;
+                border-top-left-radius: 50px;
+                border-top-right-radius: 50px;
+                height: 100px;
+                font-weight: bold;
+                padding: 0px;
+                
+            }
+    
+            & > img{
+                height:100%;
+                width: 100%;
+                object-fit: cover;
+                
+                
+            }
+        }
+    }
+
 }

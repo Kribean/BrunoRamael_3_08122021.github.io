@@ -10,12 +10,23 @@
     background-clip: text;
     -webkit-text-fill-color: transparent;
   }
-  50% {
-    transform: scale(0);
+  20% {
+    transform: scale(1);
     -webkit-text-stroke: 0px;
     background: -moz-linear-gradient(to bottom, white 80%, #FF79DA 10%, #9356DC 10%);
     background: -webkit-linear-gradient(to bottom, white 80%, #FF79DA 10%, #9356DC 10%);
     background: linear-gradient(to bottom, white 80%, #FF79DA 10%, #9356DC 10%);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  50% {
+    transform: scale(1.5);
+    -webkit-text-stroke: 0px;
+    background: -moz-linear-gradient(to bottom, white 70%, #FF79DA 20%, #9356DC 10%);
+    background: -webkit-linear-gradient(to bottom, white 70%, #FF79DA 20%, #9356DC 10%);
+    background: linear-gradient(to bottom, white 70%, #FF79DA 20%, #9356DC 10%);
     -webkit-background-clip: text;
     -moz-background-clip: text;
     background-clip: text;
@@ -140,6 +151,7 @@ nav {
   flex-wrap: wrap;
   justify-content: space-between;
   width: 100%;
+  padding-right: 15px;
 }
 #fonctionnement-bloc .fonctionnement-item {
   background-color: #eaeaea;
@@ -192,6 +204,7 @@ nav {
   font-family: "Roboto", sans-serif;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   padding-top: 50px;
   padding-bottom: 50px;
   background-color: #f7f7f7;
@@ -245,7 +258,7 @@ nav {
 #introduction-btn:hover {
   background: -moz-linear-gradient(top, #fface8, #ae80e5);
   background: -webkit-linear-gradient(top, #fface8, #ae80e5);
-  background: linear-gradient(to bottom, #fface8, ligthen(#9356DC, 10%));
+  background: linear-gradient(to bottom, #fface8, #ae80e5);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
 }
 @media screen and (max-width: 600px) {
@@ -299,6 +312,21 @@ nav {
   border-top-right-radius: 15px;
   object-fit: cover;
 }
+.card-fas--disabled {
+  -webkit-text-stroke: 1px black;
+  color: white;
+}
+.card-fas--disabled:active {
+  animation: progress-heart 1000ms;
+  -webkit-text-stroke: 0px;
+  background: -moz-linear-gradient(top, #FF79DA 0%, #9356DC 100%);
+  background: -webkit-linear-gradient(top, #FF79DA 0%, #9356DC 100%);
+  background: linear-gradient(to bottom, #FF79DA 0%, #9356DC 100%);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 .card-zone-text {
   display: flex;
   flex-direction: row;
@@ -313,15 +341,9 @@ nav {
 .card-zone-text-favi {
   font-size: 24px;
   padding-right: 20px;
+  transition: 1s;
 }
-.card-fas--disabled {
-  -webkit-text-stroke: 1px black;
-  color: white;
-}
-.card-fas--disabled:hover {
-  cursor: pointer;
-}
-.card-fas--disabled:active {
+.card-zone-text-favi a:hover i {
   animation: progress-heart 1000ms;
   -webkit-text-stroke: 0px;
   background: -moz-linear-gradient(top, #FF79DA 0%, #9356DC 100%);
@@ -337,6 +359,15 @@ footer {
   font-family: "Roboto", sans-serif;
   color: white;
   background-color: #000;
+  text-align: center;
+  padding-bottom: 100px;
+}
+@media screen and (max-width: 600px) {
+  footer {
+    text-align: left;
+    padding-left: 15px;
+    padding-bottom: 50px;
+  }
 }
 footer ul {
   list-style-type: none;
@@ -353,6 +384,35 @@ footer li {
 }
 footer li i {
   margin-right: 15px;
+}
+
+#titre_section .card {
+  font-family: "Roboto", sans-serif;
+  background-color: white;
+  width: 100%;
+  height: 500px;
+}
+#titre_section .card-zone-img {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+#titre_section .card-zone-img-textover {
+  position: absolute;
+  top: 400px;
+  left: 0px;
+  width: 100%;
+  background-color: white;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  height: 100px;
+  font-weight: bold;
+  padding: 0px;
+}
+#titre_section .card-zone-img > img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 
 /*# sourceMappingURL=style.css.map */
