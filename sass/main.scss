@@ -38,6 +38,68 @@ $color-dark:#000;
 }
 
 //keyframes
+
+@keyframes intro-appear{
+    0%{
+       
+        visibility:hidden;
+        
+    }
+    99%{
+        
+        visibility:hidden;
+       
+    }
+    100%{
+        
+        visibility:visible;
+       
+    }
+}
+
+@keyframes intro-disappear{
+    0%{
+       
+        visibility:visible;
+    }
+    98%{
+        
+        visibility:visible;
+        font-size: 40px;
+    }
+    99%{
+        
+        visibility:visible;
+        font-size: 0;
+        height:2000px;
+
+    }
+    100%{
+        
+        visibility:hidden;
+        height:0;
+        font-size: 0;
+
+    }
+}
+
+@keyframes intro-text-anim{
+    from{
+        transform: scale(1);
+        color:white;
+      
+        
+    }
+    to{
+        transform: scale(1.5);
+        color:gray;
+        padding-top: 200px;
+        text-decoration:underline;
+        
+    }
+}
+
+
 @keyframes progress-heart{
     0% {
         transform: scale(0);
@@ -89,7 +151,44 @@ $color-dark:#000;
             -webkit-text-fill-color: transparent;
     }
 }
+// intro
+#intro_launch{
+    font-family: 'Shrikhand', cursive;
+    font-size: 40px;
+    animation: intro-disappear 5000ms;
+    animation-fill-mode: forwards;
+    background-color: black;
+    height: 2000px;
 
+    &-text{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        letter-spacing: 5px;
+    }
+    & p{
+        display: block;
+        animation:intro-text-anim 4000ms infinite;
+        color: white;
+        text-shadow: 0 0 15px gray, 0 0 25px whitesmoke;
+    }
+    @for $i from 1 through 8 {
+        & p:nth-child(#{$i}){
+            animation-delay: $i * 400ms;
+
+            
+            
+        }
+    }
+
+
+}
+#first_page{
+    
+    animation: intro-appear 5000ms;
+    animation-fill-mode: forwards;
+}
 //selecteurs
 * {
     box-sizing: border-box;
@@ -529,6 +628,7 @@ footer{
 
 @keyframes appear-card {
     0%{
+
         opacity: 0;
         margin-top: 25px;
     }
@@ -739,9 +839,8 @@ footer{
     margin: 15px;
     margin-top: 15px;
     animation: appear-card 3000ms;
-    animation-delay: 250ms;
     animation-timing-function: ease-in-out;
-    opacity: 1;
+    opacity: 0;
 
     @media screen and (max-width:600px) {
         width: 95%;
@@ -823,7 +922,22 @@ footer{
         }
 
     }
+
+    @for $i from 1 through 4 {
+        &:nth-child(#{$i}){
+            animation-delay: $i * 250ms;
+            animation-fill-mode: forwards;
+            
+        }
+    }
+
+
 }
+
+
+
+
+
 #commander
 {
     display: flex;
