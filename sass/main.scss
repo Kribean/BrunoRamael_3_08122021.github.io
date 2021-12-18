@@ -511,7 +511,7 @@ nav{
         &-favi{
             font-size: 24px;
             padding-right: 20px;
-            transition: 1s;
+            /*transition: 1s;*/
 
             & a:hover{
                 & i{
@@ -557,6 +557,11 @@ footer{
         text-align: left;
         padding-left: 15px;
         padding-bottom: 50px;
+    }
+
+    & a{
+        text-decoration: none;
+        color:white;
     }
     
     & ul{
@@ -914,9 +919,9 @@ footer{
         background-color:$colour-tertiary;
         & i{
             display: block;
-            transition: transform 1000ms;
+            /*transition: transform 1000ms;
             transition-delay: 250ms;
-            transform: rotate(0deg);
+            transform: rotate(0deg);*/
             font-size: 30px;
             color:white
         }
